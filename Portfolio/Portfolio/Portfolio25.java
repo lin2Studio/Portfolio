@@ -28,7 +28,7 @@ class Game{
         return Player2;
     }
     //generador de partida.
-    public void setGame(){
+    public char getJugada(){
        int tirada = (int)(Math.round((Math.random()*2)%3));
        char jugada;
        switch (tirada){
@@ -41,7 +41,12 @@ class Game{
            case 2:
                jugada ='S';
                break;
+       return jugada;
        }
+     public void setGame() {
+    	 this.setPlayer1(getJugada);
+     }
+       
     }
 }
 
