@@ -4,7 +4,7 @@ import java.util.*;
 public class Challenge25_Seygel {
     public static void main(String[] args) {
         partido miPartido = new partido();
-        //System.out.println(miPartido.getMarcador());
+      //  System.out.println(miPartido.getMarcador());
         System.out.println(miPartido.resultadoPartido());
     }
 }
@@ -77,7 +77,7 @@ class partido{
             juego pPT =new juego();                 //pPT = piedraPapelTijeras.
             pPT.setJuego();
             this.Marcador=this.Marcador+pPT.getVentaja();
-           // System.out.println("P1: "+pPT.getPlayer1()+" P2: "+pPT.getPlayer2()+" Ventaja: "+pPT.getVentaja()); //Esta linea plotea los juegos  individualmente.
+          //System.out.println("P1: "+pPT.getPlayer1()+" P2: "+pPT.getPlayer2()+" Ventaja: "+pPT.getVentaja()); //Esta linea plotea los juegos  individualmente.
             HaKenBo.add(pPT);
         }
     }
