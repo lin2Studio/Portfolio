@@ -14,7 +14,7 @@ class Game{
     private int Advantage; //esta variable define quien gana en cada juego.
 //Constructor de clase en blanco, insertaremos los valores con setGame, que es un setter que declara el resultado de Player1 y Player2
     public Game(){
-        System.out.println(getPlayer1()+" "+getPlayer2());
+
     }
     //setters
     public void setPlayer1(char player1) {
@@ -60,43 +60,45 @@ class Game{
     }
     //Establecemos las jugadas del Player1 y Player2
     public void setGame(){
-        Game HaKenBo = new Game();
-        HaKenBo.setPlayer1(getJugada());
-        HaKenBo.setPlayer2(getJugada());
-        HaKenBo.setAdvantage();
+
+        this.setPlayer1(getJugada());
+        this.setPlayer2(getJugada());
+        this.setAdvantage();
     }
 }
 // Creamos el conjunto de jugadas a petición del usuario usamos un int, así que de 1 a (2^31)-1 vamos ha establecer un máximo de 1000
-class gamesArray{
+class gamesArray {
 
     private int Marcador;
-//Constructor del Conjunto de juegos, con la petición de tamaño a través de Terminal.
-    public gamesArray(){
-        ArrayList <Game> Match = new ArrayList<>();
+
+    //Constructor del Conjunto de juegos, con la petición de tamaño a través de Terminal.
+    public gamesArray() {
+        ArrayList<Game> Match = new ArrayList<>();
         int MatchSize;
         this.Marcador = 0;
 
-        Scanner sc=new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.println("¿Cuantas veces jugarán el Player1 contra Player2?\n[Introduzca un valor entre 1 y 1000]");
-        MatchSize=sc.nextInt();
+        MatchSize = sc.nextInt();
         for (int i = 0; i < MatchSize; i++) {
             Game RockPaperScisors = new Game();
             RockPaperScisors.setGame();
             Match.add(RockPaperScisors);
-            this.Marcador=this.Marcador+RockPaperScisors.getAdvantage();
+            this.Marcador = this.Marcador + RockPaperScisors.getAdvantage();
         }
     }
-//Creamos el marcador total del partido.
+
+    //Creamos el marcador total del partido.
     public int getMarcador() {
         return Marcador;
     }
-    public String gameResult(){
-        if(Marcador>0){
+
+    public String gameResult() {
+        if (Marcador > 0) {
             return ("Player1 WINS");
-        }else
-        if(Marcador<0){
+        } else if (Marcador < 0) {
             return ("Player2 WINS");
-        }else{
+        } else {
             return ("TIE");
         }
     }
